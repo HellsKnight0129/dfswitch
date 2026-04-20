@@ -58,7 +58,7 @@ const TYPING_LINES = [
 export default function LoginPage({ onLogin }: Props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [serverUrl, setServerUrl] = useState('https://df.dawnloadai.com:8443')
+  const [serverUrl, setServerUrl] = useState('')
   const [showPwd, setShowPwd] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')

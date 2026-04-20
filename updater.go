@@ -15,7 +15,7 @@ import (
 )
 
 // Release source is hard-coded; flip GITHUB_REPO env to override during dev.
-const defaultGitHubRepo = "sub2api/dfswitch"
+const defaultGitHubRepo = "HellsKnight0129/dfswitch"
 
 type githubRelease struct {
 	TagName string `json:"tag_name"`

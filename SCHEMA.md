@@ -1,8 +1,8 @@
 # sub2api Backend 接口真实响应快照（Phase 0）
 
 **探查时间**：2026-04-19
-**目标**：`https://df.dawnloadai.com:8443`
-**测试账号**：mxq@qq.com（role: user，allowed_groups: [3]，status: active）
+**目标**：`https://<your-server>`
+**测试账号**：user@example.com（role: user，allowed_groups: [3]，status: active）
 
 ---
 
@@ -29,7 +29,7 @@
     "token_type": "Bearer",
     "user": {
       "id": 7,
-      "email": "mxq@qq.com",
+      "email": "user@example.com",
       "username": "",
       "role": "user",
       "balance": 0,
@@ -77,7 +77,7 @@
   "id": 177,
   "user_id": 7,
   "key": "sk-...（明文，敏感！）",
-  "name": "购买-MiniMax-M2.7-highspeed-周卡",
+  "name": "example-key-name",
   "group_id": 3,
   "status": "active",
   "ip_whitelist": null,
@@ -100,7 +100,7 @@
   "concurrency": 5,
   "group": {
     "id": 3,
-    "name": "MiniMax-M2.7-highspeed",
+    "name": "example-group",
     "description": "",
     "platform": "minimax",
     "rate_multiplier": 1,
@@ -133,7 +133,7 @@
 ```
 
 ### Platform 值域（含实测）
-从 [domain/constants.go:20-27](backend/internal/domain/constants.go)：
+支持的 platform 值：
 - `anthropic` → 网关 `{host}/v1`（Anthropic Messages API）
 - `openai` → 网关 `{host}/v1`（OpenAI Chat Completions）
 - `gemini` → 网关 `{host}/v1beta`（Gemini API）
@@ -141,7 +141,7 @@
 - `minimax` → 网关 `{host}/v1`（Anthropic 兼容，`/v1/messages`）— **实测账号里就是这个**
 - `custom` → 网关 `{host}/v1`（同 anthropic 兼容路径）
 
-Status 值域（domain/constants.go:4-11）：`active` / `disabled` / `error` / `unused` / `used` / `expired`。实测看到 `active`。
+Status 值域：`active` / `disabled` / `error` / `unused` / `used` / `expired`。实测看到 `active`。
 
 Subscription_type：`standard` / `subscription`。
 
@@ -154,7 +154,7 @@ Subscription_type：`standard` / `subscription`。
   "message": "success",
   "data": {
     "id": 7,
-    "email": "mxq@qq.com",
+    "email": "user@example.com",
     "username": "",
     "role": "user",
     "balance": 0,

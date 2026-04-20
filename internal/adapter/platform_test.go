@@ -8,7 +8,7 @@ import "testing"
 // Gemini CLI append version paths themselves, while OpenAI-compat clients
 // want the full /v1 URL.
 func TestGatewayURL(t *testing.T) {
-	const server = "https://df.dawnloadai.com:8443"
+	const server = "https://example.com"
 	cases := []struct {
 		platform string
 		want     string

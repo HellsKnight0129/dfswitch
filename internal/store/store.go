@@ -28,7 +28,7 @@ type Config struct {
 
 func NewDefault() *Config {
 	return &Config{
-		ServerURL:    "https://df.dawnloadai.com:8443",
+		ServerURL:    "",
 		SyncInterval: 30,
 		AppliedTools: make(map[string]AppliedEntry),
 	}
