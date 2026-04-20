@@ -1,0 +1,43 @@
+/* Base reset — design tokens live in App.css */
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+
+/* Wails HiddenInset titlebar drag zone.
+   Wails uses --wails-draggable: drag on WKWebView, not the CSS app-region
+   spec — confirmed at pkg/options/options.go:72-76. Must sit above the sticky
+   .app-header (z-index 20) or the sticky header blocks drag hits. */
+.wails-titlebar {
+  position: fixed;
+  top: 0;
+  left: 80px;        /* leave room for macOS traffic lights */
+  right: 0;
+  height: 28px;
+  z-index: 100;
+  --wails-draggable: drag;
+}
+.app-header { padding-left: 5rem !important; }
+
+/* Selection */
+::selection {
+  background: rgba(20, 184, 166, 0.18);
+  color: #134e4a;
+}
+
+/* Scrollbar — hidden until hover */
+* { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+*:hover, *:focus-within { scrollbar-color: rgba(148,163,184,.55) transparent; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border-radius: 9999px; background: transparent; transition: background-color .2s ease; }
+*:hover::-webkit-scrollbar-thumb { background: rgba(203,213,225,.7); }
+*:hover::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,.9); }

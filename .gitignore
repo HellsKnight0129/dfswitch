@@ -1,0 +1,28 @@
+# Go build output
+/dfswitch
+/dfswitch-local
+/dist/
+*.exe
+*.app
+
+# Wails build artifacts (keep build/appicon.png which is embedded)
+/build/bin/
+/build/darwin/
+/build/windows/
+
+# Frontend
+/web/node_modules/
+/web/dist/
+/web/package.json.md5
+/web/wailsjs/
+/web/src/wailsjs/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env
+.env.local
